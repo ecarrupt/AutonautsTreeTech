@@ -1,8 +1,8 @@
 export enum ItemType{
-    Ressource,
-    Building,
-    Tool,
-    Soil
+    Ressource = "Ressource",
+    Building = "Building",
+    Tool = "Tool",
+    Soil = "Soil"
 }
 
 export interface Item{
