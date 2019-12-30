@@ -1,7 +1,7 @@
 import React from "react";
 
-const RecipesPanel : React.FC = () => {
-    return <div>Recipes</div>;
-}
+const RecipesPanel: React.FC = () => {
+  return <div>Recipes</div>;
+};
 
-export default RecipesPanel
+export default RecipesPanel;
