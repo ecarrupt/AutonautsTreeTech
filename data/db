@@ -1,0 +1,5 @@
+{"itemID":"plank","name":"Plank","type":"Ressource","icon":"logo192.png","_id":"Jd2ZYHa6usiBnph7"}
+{"itemID":"log","name":"Log","type":"Ressource","icon":"logo192.png","_id":"PHpFlhf3lt8lJldU"}
+{"recipeID":"plank","name":"Plank","inputs":[{"itemID":"axe","quantity":1,"isConsumed":false},{"itemID":"log","quantity":1,"isConsumed":true}],"outputs":[{"itemID":"plank","quantity":2}],"comment":"1st one","_id":"gljT58A9CAbBVAzw"}
+{"itemID":"axe","name":"Axe","type":"Tool","icon":"logo512.png","_id":"aWfWcZ3ZRrfca86K"}
+

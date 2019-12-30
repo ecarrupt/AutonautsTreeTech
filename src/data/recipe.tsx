@@ -1,16 +1,16 @@
 export interface RecipeInput {
-  itemId: string;
+  itemID: string;
   quantity: number;
   isConsumed: boolean;
 }
 
 export interface RecipeOutput {
-  itemId: string;
+  itemID: string;
   quantity: number;
 }
 
 export interface Recipe {
-  id: string;
+  recipeID: string;
   name: string;
   inputs: RecipeInput[];
   outputs: RecipeOutput[];
@@ -19,13 +19,13 @@ export interface Recipe {
 
 const recipes: Recipe[] = [
   {
-    id: "plank",
+    recipeID: "plank",
     name: "Plank",
     inputs: [
-      { itemId: "axe", quantity: 1, isConsumed: false },
-      { itemId: "log", quantity: 1, isConsumed: true }
+      { itemID: "axe", quantity: 1, isConsumed: false },
+      { itemID: "log", quantity: 1, isConsumed: true }
     ],
-    outputs: [{ itemId: "plank", quantity: 2 }],
+    outputs: [{ itemID: "plank", quantity: 2 }],
     comment: "1st one"
   }
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import Items, { Item } from "../data/item";
+import items, { Item } from "../data/item";
 import Recipes, { Recipe, RecipeInput, RecipeOutput } from "../data/recipe";
 import { Card, H3, H2, H5, H1, H4 } from "@blueprintjs/core";
 import { useParams, NavLink } from "react-router-dom";
@@ -7,16 +7,20 @@ import { useParams, NavLink } from "react-router-dom";
 const ItemPanel: React.FC = () => {
   let { itemId } = useParams();
 
-  let item = Items.find(i => i.id === itemId!)!;
-  let usedIn = Recipes.filter(r => r.inputs.some(i => i.itemId === item.id));
-  let produced = Recipes.filter(r => r.outputs.some(i => i.itemId === item.id));
+  let item = items.find(i => i.itemID === itemId!)!;
+  let usedIn = Recipes.filter(r =>
+    r.inputs.some(i => i.itemID === item.itemID)
+  );
+  let produced = Recipes.filter(r =>
+    r.outputs.some(i => i.itemID === item.itemID)
+  );
 
   const getItemFigure = (currentItem: Item, quantity: number) => {
-    if (currentItem.id !== item.id) {
+    if (currentItem.itemID !== item.itemID) {
       return (
         <NavLink
           style={{ textDecoration: "inherit", color: "inherit" }}
-          to={"/item/" + currentItem.id}
+          to={"/item/" + currentItem.itemID}
         >
           <Card interactive style={{ margin: "2px" }}>
             <div
@@ -25,7 +29,7 @@ const ItemPanel: React.FC = () => {
                 flexDirection: "column",
                 alignContent: "stretch",
                 alignItems: "center",
-                color: currentItem.id === item.id ? "blue" : "black"
+                color: currentItem.itemID === item.itemID ? "blue" : "black"
               }}
             >
               <b>{currentItem.name}</b>
@@ -49,7 +53,7 @@ const ItemPanel: React.FC = () => {
               flexDirection: "column",
               alignContent: "stretch",
               alignItems: "center",
-              color: currentItem.id === item.id ? "blue" : "black"
+              color: currentItem.itemID === item.itemID ? "blue" : "black"
             }}
           >
             <b>{currentItem.name}</b>
@@ -71,7 +75,7 @@ const ItemPanel: React.FC = () => {
     index: number,
     array: RecipeInput[]
   ) => {
-    let currentItem = Items.find(i => i.id === input.itemId)!;
+    let currentItem = items.find(i => i.itemID === input.itemID)!;
     return (
       <>
         {getItemFigure(currentItem, input.quantity)}
@@ -98,7 +102,7 @@ const ItemPanel: React.FC = () => {
     index: number,
     array: RecipeOutput[]
   ) => {
-    let currentItem = Items.find(i => i.id === input.itemId)!;
+    let currentItem = items.find(i => i.itemID === input.itemID)!;
     return (
       <>
         {getItemFigure(currentItem, input.quantity)}

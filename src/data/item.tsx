@@ -6,22 +6,27 @@ export enum ItemType {
 }
 
 export interface Item {
-  id: string;
+  itemID: string;
   name: string;
   type: ItemType;
   icon: string;
 }
 
-const Items: Item[] = [
-  { id: "plank", name: "Plank", type: ItemType.Ressource, icon: "logo192.png" },
-  { id: "log", name: "Log", type: ItemType.Ressource, icon: "logo192.png" },
-  { id: "axe", name: "Axe", type: ItemType.Tool, icon: "logo512.png" },
+const items: Item[] = [
   {
-    id: "chopper",
+    itemID: "plank",
+    name: "Plank",
+    type: ItemType.Ressource,
+    icon: "logo192.png"
+  },
+  { itemID: "log", name: "Log", type: ItemType.Ressource, icon: "logo192.png" },
+  { itemID: "axe", name: "Axe", type: ItemType.Tool, icon: "logo512.png" },
+  {
+    itemID: "chopper",
     name: "Chopper",
     type: ItemType.Building,
     icon: "logo192.png"
   }
 ];
 
-export default Items;
+export default items;
